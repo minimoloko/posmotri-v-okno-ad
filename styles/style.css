@@ -40,6 +40,7 @@ html {
   text-align: center;
   color: #FFF;
   height: 34px;
+  cursor: pointer;
 }
 .button:hover {
   text-decoration: underline solid #FFF;
@@ -80,8 +81,24 @@ html {
 }
 .content__video-card {
   display: flex;
+  position: relative;
   align-items: start;
   justify-content: space-between;
+  z-index: 2;
+  cursor: pointer
+}
+.content__video-card:hover {
+  text-decoration: underline solid #FFF;
+}
+.content__video-card:has(:focus-visible)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 1;
 }
 
 .content__video-card-title {
@@ -174,6 +191,7 @@ html {
   background: transparent;
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 .search-form__pseudo-checkbox:has(:focus-visible) {
@@ -208,6 +226,7 @@ html {
   height: 386px;
   max-width: 100%;
   max-height: 100%;
+  cursor: pointer;
 }
 .result__video {
   width: 100%;
